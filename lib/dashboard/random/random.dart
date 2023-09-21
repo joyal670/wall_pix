@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallpix/dashboard/home/tabs/recent.dart';
 
 import '../CustomappBar.dart';
 import '../home/tabItems.dart';
@@ -9,9 +10,7 @@ class RandomScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: TabBarItemScreen(
-        gridCount: 3,
-      ),
+      body: RecentTab(),
     );
   }
 }

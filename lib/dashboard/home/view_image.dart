@@ -3,76 +3,115 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:wallpix/core/dim.dart';
+import 'package:wallpix/model/photo_model.dart';
+
+import '../../api/api.dart';
 
 class ViewImageScreen extends StatelessWidget {
-  ViewImageScreen({super.key});
+  ViewImageScreen({super.key, required this.photoId});
 
-  String image =
-      "https://images.unsplash.com/photo-1693307418199-4af8f979e50d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1924&q=80";
+  final photoId;
+
+  Future<PhotoModel> getPhoto() async {
+    PhotoModel mod = await ApiClass.instance.getPhoto(photoId.toString());
+    return mod;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: SizedBox(
-        height: 60,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        bottomNavigationBar: SizedBox(
+          height: 60,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Icon(
+                Icons.info_outline,
+                color: Colors.white,
+              ),
+              Image.asset(
+                'assets/images/download.png',
+                width: 40,
+                height: 50,
+              ),
+              Icon(
+                Icons.share,
+                color: Colors.white,
+              ),
+            ],
+          ),
+        ),
+        body: Stack(
           children: [
-            Icon(
-              Icons.info_outline,
-              color: Colors.white,
-            ),
-            Image.asset(
-              'assets/images/download.png',
-              width: 40,
-              height: 50,
-            ),
-            Icon(
-              Icons.share,
-              color: Colors.white,
+            FutureBuilder<PhotoModel>(
+              future: getPhoto(),
+              builder: (context, AsyncSnapshot<PhotoModel> snapshot) {
+                if (snapshot.connectionState == ConnectionState.done) {
+                  // If we got an error
+                  if (snapshot.hasError) {
+                    return Center(
+                      child: Text(
+                        '${snapshot.error} occurred',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    );
+
+                    // if we got our data
+                  } else if (snapshot.hasData) {
+                    // Extracting data from snapshot object
+                    final data = snapshot.data as PhotoModel;
+                    return Stack(
+                      children: [
+                        Image.network(
+                          data.urls!.full.toString(),
+                          width: double.infinity,
+                          height: double.infinity,
+                          fit: BoxFit.cover,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 60),
+                          child: Align(
+                            alignment: Alignment.topCenter,
+                            child: ListTile(
+                                trailing: Icon(
+                                  Icons.favorite,
+                                  color: Colors.white,
+                                ),
+                                title: Text(
+                                  data.slug.toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                  maxLines: 2,
+                                ),
+                                subtitle: Text(
+                                  data.altDescription.toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.white),
+                                ),
+                                leading: OutlinedButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: Icon(
+                                      Icons.arrow_back,
+                                      color: Colors.white,
+                                    ))),
+                          ),
+                        ),
+                      ],
+                    );
+                  }
+                }
+
+                // Displaying LoadingSpinner to indicate waiting state
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              },
             ),
           ],
-        ),
-      ),
-      body: Stack(
-        children: [
-          Image.network(
-            image,
-            width: double.infinity,
-            height: double.infinity,
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 60),
-            child: Align(
-              alignment: Alignment.topCenter,
-              child: ListTile(
-                  trailing: Icon(
-                    Icons.favorite,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    "Spider Man",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.white),
-                  ),
-                  subtitle: Text(
-                    "Moviews & Super Heros",
-                    style: TextStyle(
-                        fontWeight: FontWeight.normal, color: Colors.white),
-                  ),
-                  leading: OutlinedButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Icon(
-                        Icons.arrow_back,
-                        color: Colors.white,
-                      ))),
-            ),
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }

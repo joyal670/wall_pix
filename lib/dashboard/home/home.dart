@@ -6,8 +6,13 @@ import 'package:wallpix/core/dim.dart';
 import 'package:wallpix/dashboard/CustomappBar.dart';
 import 'package:wallpix/dashboard/category/category.dart';
 import 'package:wallpix/dashboard/home/tabItems.dart';
+import 'package:wallpix/dashboard/home/tabs/latest.dart';
+import 'package:wallpix/dashboard/home/tabs/oldest.dart';
+import 'package:wallpix/dashboard/home/tabs/popular.dart';
+import 'package:wallpix/dashboard/home/tabs/recent.dart';
 import 'package:wallpix/dashboard/wallet/wallet.dart';
 
+import '../../api/api.dart';
 import '../../core/colors.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -23,13 +28,20 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   void initState() {
-    _tabController = TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     // df(context);
+
+    // _tabController.addListener(() {
+    //   TabBarItemScreen(
+    //     gridCount: 2,
+    //   ).tabName = "popular";
+    // });
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Column(
@@ -52,37 +64,23 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                 ),
                 Tab(
-                  child: Text('Downloaded'),
+                  child: Text('popular'),
                 ),
                 Tab(
-                  child: Text('Liked'),
+                  child: Text('latest'),
                 ),
                 Tab(
-                  child: Text('Uploaded'),
+                  child: Text('oldest'),
                 ),
-                Tab(
-                  child: Text('Downloaded'),
-                )
               ]),
           Expanded(
             child: TabBarView(
               controller: _tabController,
               children: [
-                TabBarItemScreen(
-                  gridCount: 2,
-                ),
-                TabBarItemScreen(
-                  gridCount: 2,
-                ),
-                TabBarItemScreen(
-                  gridCount: 2,
-                ),
-                TabBarItemScreen(
-                  gridCount: 2,
-                ),
-                TabBarItemScreen(
-                  gridCount: 2,
-                ),
+                RecentTab(),
+                PopularTab(),
+                LatestTab(),
+                OldestTab(),
               ],
             ),
           )

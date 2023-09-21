@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
       });
     });
 
-    Future.delayed(Duration(seconds: 5), () {
+    Future.delayed(Duration(seconds: 3), () {
       navigateToLoginPage();
     });
   }
@@ -115,7 +115,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> navigateToLoginPage() async {
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 1), () {
       Navigator.pushReplacement(
           context,
           PageTransition(
