@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:wallpix/dashboard/category/category.dart';
@@ -15,6 +15,8 @@ ValueNotifier<String> bottomNavigationIndex = ValueNotifier("Discover");
 
 class Dashboard extends StatelessWidget {
   Dashboard({super.key});
+
+  var scaffoldKey = GlobalKey<ScaffoldState>();
 
   List<Widget> _buildScreens() {
     return [
@@ -57,6 +59,99 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        key: scaffoldKey,
+        drawer: Drawer(
+          backgroundColor: colorBlack,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'Welcome,',
+                      style: TextStyle(
+                          fontFamily: "Raleway",
+                          fontWeight: FontWeight.bold,
+                          fontSize: 50),
+                    ),
+                    Text(
+                      'Finish sign in to continue.',
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ],
+                ),
+              ),
+              ListTile(
+                splashColor: colorCodGrey,
+                title: const Text(
+                  'Home',
+                  style: TextStyle(
+                    color: colorWhite,
+                  ),
+                ),
+                leading: Icon(
+                  Icons.grid_view,
+                  color: colorWhite,
+                ),
+                onTap: () {
+                  // Then close the drawer
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                splashColor: colorCodGrey,
+                leading: Icon(
+                  Icons.star_border,
+                  color: colorWhite,
+                ),
+                title: const Text(
+                  'Favorites',
+                  style: TextStyle(color: colorWhite),
+                ),
+                onTap: () {
+                  // Then close the drawer
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                splashColor: colorCodGrey,
+                leading: Icon(
+                  Icons.history,
+                  color: colorWhite,
+                ),
+                title: const Text(
+                  'History',
+                  style: TextStyle(color: colorWhite),
+                ),
+                onTap: () {
+                  // Then close the drawer
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                splashColor: colorCodGrey,
+                leading: Icon(
+                  Icons.mail_outline,
+                  color: colorWhite,
+                ),
+                title: const Text(
+                  'Support',
+                  style: TextStyle(color: colorWhite),
+                ),
+                onTap: () {
+                  // Then close the drawer
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+        ),
         appBar: PreferredSize(
             preferredSize: Size.fromHeight(65),
             child: CustomAppBar(

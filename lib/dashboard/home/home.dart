@@ -49,11 +49,17 @@ class _HomeScreenState extends State<HomeScreen>
         children: [
           height10,
           TabBar(
+              unselectedLabelStyle:
+                  TextStyle(fontWeight: FontWeight.w200, fontSize: 14),
+              labelStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 27,
+                  fontStyle: FontStyle.normal),
               controller: _tabController,
               labelColor: Colors.white,
               indicatorColor: colorWhite,
               isScrollable: true,
-              indicatorWeight: 1,
+              indicatorWeight: .5,
               unselectedLabelColor: Colors.grey,
               dividerColor: Colors.transparent,
               indicatorPadding: EdgeInsets.only(bottom: 10),
@@ -64,13 +70,13 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                 ),
                 Tab(
-                  child: Text('popular'),
+                  child: Text('Popular'),
                 ),
                 Tab(
-                  child: Text('latest'),
+                  child: Text('Latest'),
                 ),
                 Tab(
-                  child: Text('oldest'),
+                  child: Text('Oldest'),
                 ),
               ]),
           Expanded(

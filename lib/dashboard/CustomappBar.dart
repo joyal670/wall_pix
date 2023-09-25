@@ -24,10 +24,15 @@ class CustomAppBar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             width10,
-            Image.asset(
-              "assets/images/menu.png",
-              width: 40,
-              height: 40,
+            InkWell(
+              onTap: () {
+                Scaffold.of(context).openDrawer();
+              },
+              child: Image.asset(
+                "assets/images/menu.png",
+                width: 40,
+                height: 40,
+              ),
             ),
             width15,
             Text(
