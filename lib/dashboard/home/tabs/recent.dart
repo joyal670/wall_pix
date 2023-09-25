@@ -9,7 +9,9 @@ import 'package:wallpix/dashboard/home/view_image.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
 class RecentTab extends StatefulWidget {
-  RecentTab({super.key});
+  RecentTab({super.key, required this.gridCount});
+
+  final gridCount;
 
   @override
   State<RecentTab> createState() => _RecentTabState();
@@ -44,7 +46,7 @@ class _RecentTabState extends State<RecentTab> {
   Widget build(BuildContext context) {
     return GridView.count(
       controller: _scrollController,
-      crossAxisCount: 2,
+      crossAxisCount: widget.gridCount,
       mainAxisSpacing: 10,
       crossAxisSpacing: 10,
       shrinkWrap: true,
@@ -78,9 +80,28 @@ class _RecentTabState extends State<RecentTab> {
                   child: Row(
                     children: [
                       Text(model[index].likes.toString()),
-                      Icon(
-                        Icons.favorite,
-                        color: Colors.red,
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            if (model[index].likedByUser!) {
+                              model[index].likes = model[index].likes! - 1;
+                              model[index].likedByUser = false;
+                            } else {
+                              model[index].likedByUser = true;
+                              model[index].likes = model[index].likes! + 1;
+                              ApiClass.instance.likePhoto(model[index].id!);
+                            }
+                          });
+                        },
+                        child: model[index].likedByUser!
+                            ? Icon(
+                                Icons.favorite,
+                                color: Colors.red,
+                              )
+                            : Icon(
+                                Icons.favorite_outline,
+                                color: Colors.white,
+                              ),
                       )
                     ],
                   ),
@@ -130,7 +151,7 @@ class _RecentTabState extends State<RecentTab> {
             ),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: new BorderRadius.all(Radius.circular(10)),
+              borderRadius: BorderRadius.all(Radius.circular(10)),
             ),
           ),
         );

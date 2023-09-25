@@ -80,9 +80,28 @@ class _RecentTabState extends State<PopularTab> {
                   child: Row(
                     children: [
                       Text(model[index].likes.toString()),
-                      Icon(
-                        Icons.favorite,
-                        color: Colors.red,
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            if (model[index].likedByUser!) {
+                              model[index].likes = model[index].likes! - 1;
+                              model[index].likedByUser = false;
+                            } else {
+                              model[index].likedByUser = true;
+                              model[index].likes = model[index].likes! + 1;
+                              ApiClass.instance.likePhoto(model[index].id!);
+                            }
+                          });
+                        },
+                        child: model[index].likedByUser!
+                            ? Icon(
+                                Icons.favorite,
+                                color: Colors.red,
+                              )
+                            : Icon(
+                                Icons.favorite_outline,
+                                color: Colors.white,
+                              ),
                       )
                     ],
                   ),

@@ -5,7 +5,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:wallpix/api/url.dart';
+import 'package:wallpix/dashboard/home/tabs/latest.dart';
 import 'package:wallpix/model/category_model.dart';
+import 'package:wallpix/model/collection_details_response.dart';
+import 'package:wallpix/model/like_photo_response.dart';
 
 import '../model/photo_model.dart';
 import 'package:gson/gson.dart';
@@ -67,6 +70,38 @@ class ApiClass {
     });
 
     return PhotoModel.fromJson(result.data);
+  }
+
+  Future<LikePhotoResponse> likePhoto(String id) async {
+    print(url.baseUrl + url.photos + "/$id/" + url.like);
+    final result = await dio
+        .get(url.baseUrl + url.photos + "/$id/" + url.like, queryParameters: {
+      'client_id': url.client_i,
+    });
+
+    print(result);
+
+    return LikePhotoResponse.fromJson(result.data);
+  }
+
+  Future<List<CollectionDetailsResponse>> collectionDetails(
+      String id, String page) async {
+    print('${url.baseUrl}${url.topics}/$id/${url.photos}');
+    final result = await dio
+        .get("${url.baseUrl}${url.topics}/$id/${url.photos}", queryParameters: {
+      'client_id': url.client_i,
+      'page': page,
+      'per_page': 10
+    });
+
+    List<CollectionDetailsResponse> data = [];
+    result.data.forEach(
+      (element) {
+        data.add(CollectionDetailsResponse.fromJson(element));
+      },
+    );
+    print(data[0].urls!.full.toString());
+    return data;
   }
 
   // Future<RegisterResponse?> registerUserApi(FormData formData) async {

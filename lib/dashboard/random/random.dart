@@ -10,7 +10,9 @@ class RandomScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: RecentTab(),
+      body: RecentTab(
+        gridCount: 3,
+      ),
     );
   }
 }

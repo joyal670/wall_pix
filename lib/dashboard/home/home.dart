@@ -77,7 +77,9 @@ class _HomeScreenState extends State<HomeScreen>
             child: TabBarView(
               controller: _tabController,
               children: [
-                RecentTab(),
+                RecentTab(
+                  gridCount: 2,
+                ),
                 PopularTab(),
                 LatestTab(),
                 OldestTab(),

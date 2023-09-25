@@ -6,4 +6,5 @@ class URL {
 
   String photos = 'photos';
   String topics = 'topics';
+  String like = 'like';
 }

@@ -1,4 +1,3 @@
-
 class PhotoModel {
   String? id;
   String? slug;
@@ -31,96 +30,139 @@ class PhotoModel {
   List<Topics>? topics;
   RelatedCollections? relatedCollections;
 
-  PhotoModel({this.id, this.slug, this.createdAt, this.updatedAt, this.promotedAt, this.width, this.height, this.color, this.blurHash, this.description, this.altDescription, this.breadcrumbs, this.urls, this.links, this.likes, this.likedByUser, this.currentUserCollections, this.sponsorship, this.topicSubmissions, this.user, this.exif, this.location, this.meta, this.publicDomain, this.tags, this.tagsPreview, this.views, this.downloads, this.topics, this.relatedCollections});
+  PhotoModel(
+      {this.id,
+      this.slug,
+      this.createdAt,
+      this.updatedAt,
+      this.promotedAt,
+      this.width,
+      this.height,
+      this.color,
+      this.blurHash,
+      this.description,
+      this.altDescription,
+      this.breadcrumbs,
+      this.urls,
+      this.links,
+      this.likes,
+      this.likedByUser,
+      this.currentUserCollections,
+      this.sponsorship,
+      this.topicSubmissions,
+      this.user,
+      this.exif,
+      this.location,
+      this.meta,
+      this.publicDomain,
+      this.tags,
+      this.tagsPreview,
+      this.views,
+      this.downloads,
+      this.topics,
+      this.relatedCollections});
 
   PhotoModel.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is String) {
+    if (json["id"] is String) {
       id = json["id"];
     }
-    if(json["slug"] is String) {
+    if (json["slug"] is String) {
       slug = json["slug"];
     }
-    if(json["created_at"] is String) {
+    if (json["created_at"] is String) {
       createdAt = json["created_at"];
     }
-    if(json["updated_at"] is String) {
+    if (json["updated_at"] is String) {
       updatedAt = json["updated_at"];
     }
-    if(json["promoted_at"] is String) {
+    if (json["promoted_at"] is String) {
       promotedAt = json["promoted_at"];
     }
-    if(json["width"] is int) {
+    if (json["width"] is int) {
       width = json["width"];
     }
-    if(json["height"] is int) {
+    if (json["height"] is int) {
       height = json["height"];
     }
-    if(json["color"] is String) {
+    if (json["color"] is String) {
       color = json["color"];
     }
-    if(json["blur_hash"] is String) {
+    if (json["blur_hash"] is String) {
       blurHash = json["blur_hash"];
     }
-    if(json["description"] is String) {
+    if (json["description"] is String) {
       description = json["description"];
     }
-    if(json["alt_description"] is String) {
+    if (json["alt_description"] is String) {
       altDescription = json["alt_description"];
     }
-    if(json["breadcrumbs"] is List) {
+    if (json["breadcrumbs"] is List) {
       breadcrumbs = json["breadcrumbs"] ?? [];
     }
-    if(json["urls"] is Map) {
+    if (json["urls"] is Map) {
       urls = json["urls"] == null ? null : Urls.fromJson(json["urls"]);
     }
-    if(json["links"] is Map) {
+    if (json["links"] is Map) {
       links = json["links"] == null ? null : Links.fromJson(json["links"]);
     }
-    if(json["likes"] is int) {
+    if (json["likes"] is int) {
       likes = json["likes"];
     }
-    if(json["liked_by_user"] is bool) {
+    if (json["liked_by_user"] is bool) {
       likedByUser = json["liked_by_user"];
     }
-    if(json["current_user_collections"] is List) {
+    if (json["current_user_collections"] is List) {
       currentUserCollections = json["current_user_collections"] ?? [];
     }
     sponsorship = json["sponsorship"];
-    if(json["topic_submissions"] is Map) {
-      topicSubmissions = json["topic_submissions"] == null ? null : TopicSubmissions.fromJson(json["topic_submissions"]);
+    if (json["topic_submissions"] is Map) {
+      topicSubmissions = json["topic_submissions"] == null
+          ? null
+          : TopicSubmissions.fromJson(json["topic_submissions"]);
     }
-    if(json["user"] is Map) {
+    if (json["user"] is Map) {
       user = json["user"] == null ? null : User.fromJson(json["user"]);
     }
-    if(json["exif"] is Map) {
+    if (json["exif"] is Map) {
       exif = json["exif"] == null ? null : Exif.fromJson(json["exif"]);
     }
-    if(json["location"] is Map) {
-      location = json["location"] == null ? null : Location.fromJson(json["location"]);
+    if (json["location"] is Map) {
+      location =
+          json["location"] == null ? null : Location.fromJson(json["location"]);
     }
-    if(json["meta"] is Map) {
+    if (json["meta"] is Map) {
       meta = json["meta"] == null ? null : Meta.fromJson(json["meta"]);
     }
-    if(json["public_domain"] is bool) {
+    if (json["public_domain"] is bool) {
       publicDomain = json["public_domain"];
     }
-    if(json["tags"] is List) {
-      tags = json["tags"] == null ? null : (json["tags"] as List).map((e) => Tags.fromJson(e)).toList();
+    if (json["tags"] is List) {
+      tags = json["tags"] == null
+          ? null
+          : (json["tags"] as List).map((e) => Tags.fromJson(e)).toList();
     }
-    if(json["tags_preview"] is List) {
-      tagsPreview = json["tags_preview"] == null ? null : (json["tags_preview"] as List).map((e) => TagsPreview.fromJson(e)).toList();
+    if (json["tags_preview"] is List) {
+      tagsPreview = json["tags_preview"] == null
+          ? null
+          : (json["tags_preview"] as List)
+              .map((e) => TagsPreview.fromJson(e))
+              .toList();
     }
-    if(json["views"] is int) {
+    if (json["views"] is int) {
       views = json["views"];
     }
-    if(json["downloads"] is int) {
+    if (json["downloads"] is int) {
       downloads = json["downloads"];
     }
-    if(json["topics"] is List) {
-      topics = json["topics"] == null ? null : (json["topics"] as List).map((e) => Topics.fromJson(e)).toList();
+    if (json["topics"] is List) {
+      topics = json["topics"] == null
+          ? null
+          : (json["topics"] as List).map((e) => Topics.fromJson(e)).toList();
     }
-    if(json["related_collections"] is Map) {
-      relatedCollections = json["related_collections"] == null ? null : RelatedCollections.fromJson(json["related_collections"]);
+    if (json["related_collections"] is Map) {
+      relatedCollections = json["related_collections"] == null
+          ? null
+          : RelatedCollections.fromJson(json["related_collections"]);
     }
   }
 
@@ -137,49 +179,49 @@ class PhotoModel {
     _data["blur_hash"] = blurHash;
     _data["description"] = description;
     _data["alt_description"] = altDescription;
-    if(breadcrumbs != null) {
+    if (breadcrumbs != null) {
       _data["breadcrumbs"] = breadcrumbs;
     }
-    if(urls != null) {
+    if (urls != null) {
       _data["urls"] = urls?.toJson();
     }
-    if(links != null) {
+    if (links != null) {
       _data["links"] = links?.toJson();
     }
     _data["likes"] = likes;
     _data["liked_by_user"] = likedByUser;
-    if(currentUserCollections != null) {
+    if (currentUserCollections != null) {
       _data["current_user_collections"] = currentUserCollections;
     }
     _data["sponsorship"] = sponsorship;
-    if(topicSubmissions != null) {
+    if (topicSubmissions != null) {
       _data["topic_submissions"] = topicSubmissions?.toJson();
     }
-    if(user != null) {
+    if (user != null) {
       _data["user"] = user?.toJson();
     }
-    if(exif != null) {
+    if (exif != null) {
       _data["exif"] = exif?.toJson();
     }
-    if(location != null) {
+    if (location != null) {
       _data["location"] = location?.toJson();
     }
-    if(meta != null) {
+    if (meta != null) {
       _data["meta"] = meta?.toJson();
     }
     _data["public_domain"] = publicDomain;
-    if(tags != null) {
+    if (tags != null) {
       _data["tags"] = tags?.map((e) => e.toJson()).toList();
     }
-    if(tagsPreview != null) {
+    if (tagsPreview != null) {
       _data["tags_preview"] = tagsPreview?.map((e) => e.toJson()).toList();
     }
     _data["views"] = views;
     _data["downloads"] = downloads;
-    if(topics != null) {
+    if (topics != null) {
       _data["topics"] = topics?.map((e) => e.toJson()).toList();
     }
-    if(relatedCollections != null) {
+    if (relatedCollections != null) {
       _data["related_collections"] = relatedCollections?.toJson();
     }
     return _data;
@@ -194,14 +236,16 @@ class RelatedCollections {
   RelatedCollections({this.total, this.type, this.results});
 
   RelatedCollections.fromJson(Map<String, dynamic> json) {
-    if(json["total"] is int) {
+    if (json["total"] is int) {
       total = json["total"];
     }
-    if(json["type"] is String) {
+    if (json["type"] is String) {
       type = json["type"];
     }
-    if(json["results"] is List) {
-      results = json["results"] == null ? null : (json["results"] as List).map((e) => Results.fromJson(e)).toList();
+    if (json["results"] is List) {
+      results = json["results"] == null
+          ? null
+          : (json["results"] as List).map((e) => Results.fromJson(e)).toList();
     }
   }
 
@@ -209,7 +253,7 @@ class RelatedCollections {
     final Map<String, dynamic> _data = <String, dynamic>{};
     _data["total"] = total;
     _data["type"] = type;
-    if(results != null) {
+    if (results != null) {
       _data["results"] = results?.map((e) => e.toJson()).toList();
     }
     return _data;
@@ -233,51 +277,74 @@ class Results {
   CoverPhoto1? coverPhoto;
   List<PreviewPhotos>? previewPhotos;
 
-  Results({this.id, this.title, this.description, this.publishedAt, this.lastCollectedAt, this.updatedAt, this.featured, this.totalPhotos, this.private, this.shareKey, this.tags, this.links, this.user, this.coverPhoto, this.previewPhotos});
+  Results(
+      {this.id,
+      this.title,
+      this.description,
+      this.publishedAt,
+      this.lastCollectedAt,
+      this.updatedAt,
+      this.featured,
+      this.totalPhotos,
+      this.private,
+      this.shareKey,
+      this.tags,
+      this.links,
+      this.user,
+      this.coverPhoto,
+      this.previewPhotos});
 
   Results.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is String) {
+    if (json["id"] is String) {
       id = json["id"];
     }
-    if(json["title"] is String) {
+    if (json["title"] is String) {
       title = json["title"];
     }
     description = json["description"];
-    if(json["published_at"] is String) {
+    if (json["published_at"] is String) {
       publishedAt = json["published_at"];
     }
-    if(json["last_collected_at"] is String) {
+    if (json["last_collected_at"] is String) {
       lastCollectedAt = json["last_collected_at"];
     }
-    if(json["updated_at"] is String) {
+    if (json["updated_at"] is String) {
       updatedAt = json["updated_at"];
     }
-    if(json["featured"] is bool) {
+    if (json["featured"] is bool) {
       featured = json["featured"];
     }
-    if(json["total_photos"] is int) {
+    if (json["total_photos"] is int) {
       totalPhotos = json["total_photos"];
     }
-    if(json["private"] is bool) {
+    if (json["private"] is bool) {
       private = json["private"];
     }
-    if(json["share_key"] is String) {
+    if (json["share_key"] is String) {
       shareKey = json["share_key"];
     }
-    if(json["tags"] is List) {
-      tags = json["tags"] == null ? null : (json["tags"] as List).map((e) => Tags1.fromJson(e)).toList();
+    if (json["tags"] is List) {
+      tags = json["tags"] == null
+          ? null
+          : (json["tags"] as List).map((e) => Tags1.fromJson(e)).toList();
     }
-    if(json["links"] is Map) {
+    if (json["links"] is Map) {
       links = json["links"] == null ? null : Links4.fromJson(json["links"]);
     }
-    if(json["user"] is Map) {
+    if (json["user"] is Map) {
       user = json["user"] == null ? null : User2.fromJson(json["user"]);
     }
-    if(json["cover_photo"] is Map) {
-      coverPhoto = json["cover_photo"] == null ? null : CoverPhoto1.fromJson(json["cover_photo"]);
+    if (json["cover_photo"] is Map) {
+      coverPhoto = json["cover_photo"] == null
+          ? null
+          : CoverPhoto1.fromJson(json["cover_photo"]);
     }
-    if(json["preview_photos"] is List) {
-      previewPhotos = json["preview_photos"] == null ? null : (json["preview_photos"] as List).map((e) => PreviewPhotos.fromJson(e)).toList();
+    if (json["preview_photos"] is List) {
+      previewPhotos = json["preview_photos"] == null
+          ? null
+          : (json["preview_photos"] as List)
+              .map((e) => PreviewPhotos.fromJson(e))
+              .toList();
     }
   }
 
@@ -293,19 +360,19 @@ class Results {
     _data["total_photos"] = totalPhotos;
     _data["private"] = private;
     _data["share_key"] = shareKey;
-    if(tags != null) {
+    if (tags != null) {
       _data["tags"] = tags?.map((e) => e.toJson()).toList();
     }
-    if(links != null) {
+    if (links != null) {
       _data["links"] = links?.toJson();
     }
-    if(user != null) {
+    if (user != null) {
       _data["user"] = user?.toJson();
     }
-    if(coverPhoto != null) {
+    if (coverPhoto != null) {
       _data["cover_photo"] = coverPhoto?.toJson();
     }
-    if(previewPhotos != null) {
+    if (previewPhotos != null) {
       _data["preview_photos"] = previewPhotos?.map((e) => e.toJson()).toList();
     }
     return _data;
@@ -320,25 +387,31 @@ class PreviewPhotos {
   String? blurHash;
   Urls3? urls;
 
-  PreviewPhotos({this.id, this.slug, this.createdAt, this.updatedAt, this.blurHash, this.urls});
+  PreviewPhotos(
+      {this.id,
+      this.slug,
+      this.createdAt,
+      this.updatedAt,
+      this.blurHash,
+      this.urls});
 
   PreviewPhotos.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is String) {
+    if (json["id"] is String) {
       id = json["id"];
     }
-    if(json["slug"] is String) {
+    if (json["slug"] is String) {
       slug = json["slug"];
     }
-    if(json["created_at"] is String) {
+    if (json["created_at"] is String) {
       createdAt = json["created_at"];
     }
-    if(json["updated_at"] is String) {
+    if (json["updated_at"] is String) {
       updatedAt = json["updated_at"];
     }
-    if(json["blur_hash"] is String) {
+    if (json["blur_hash"] is String) {
       blurHash = json["blur_hash"];
     }
-    if(json["urls"] is Map) {
+    if (json["urls"] is Map) {
       urls = json["urls"] == null ? null : Urls3.fromJson(json["urls"]);
     }
   }
@@ -350,7 +423,7 @@ class PreviewPhotos {
     _data["created_at"] = createdAt;
     _data["updated_at"] = updatedAt;
     _data["blur_hash"] = blurHash;
-    if(urls != null) {
+    if (urls != null) {
       _data["urls"] = urls?.toJson();
     }
     return _data;
@@ -365,25 +438,31 @@ class Urls3 {
   String? thumb;
   String? smallS3;
 
-  Urls3({this.raw, this.full, this.regular, this.small, this.thumb, this.smallS3});
+  Urls3(
+      {this.raw,
+      this.full,
+      this.regular,
+      this.small,
+      this.thumb,
+      this.smallS3});
 
   Urls3.fromJson(Map<String, dynamic> json) {
-    if(json["raw"] is String) {
+    if (json["raw"] is String) {
       raw = json["raw"];
     }
-    if(json["full"] is String) {
+    if (json["full"] is String) {
       full = json["full"];
     }
-    if(json["regular"] is String) {
+    if (json["regular"] is String) {
       regular = json["regular"];
     }
-    if(json["small"] is String) {
+    if (json["small"] is String) {
       small = json["small"];
     }
-    if(json["thumb"] is String) {
+    if (json["thumb"] is String) {
       thumb = json["thumb"];
     }
-    if(json["small_s3"] is String) {
+    if (json["small_s3"] is String) {
       smallS3 = json["small_s3"];
     }
   }
@@ -422,65 +501,87 @@ class CoverPhoto1 {
   TopicSubmissions2? topicSubmissions;
   User3? user;
 
-  CoverPhoto1({this.id, this.slug, this.createdAt, this.updatedAt, this.promotedAt, this.width, this.height, this.color, this.blurHash, this.description, this.altDescription, this.breadcrumbs, this.urls, this.links, this.likes, this.likedByUser, this.currentUserCollections, this.sponsorship, this.topicSubmissions, this.user});
+  CoverPhoto1(
+      {this.id,
+      this.slug,
+      this.createdAt,
+      this.updatedAt,
+      this.promotedAt,
+      this.width,
+      this.height,
+      this.color,
+      this.blurHash,
+      this.description,
+      this.altDescription,
+      this.breadcrumbs,
+      this.urls,
+      this.links,
+      this.likes,
+      this.likedByUser,
+      this.currentUserCollections,
+      this.sponsorship,
+      this.topicSubmissions,
+      this.user});
 
   CoverPhoto1.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is String) {
+    if (json["id"] is String) {
       id = json["id"];
     }
-    if(json["slug"] is String) {
+    if (json["slug"] is String) {
       slug = json["slug"];
     }
-    if(json["created_at"] is String) {
+    if (json["created_at"] is String) {
       createdAt = json["created_at"];
     }
-    if(json["updated_at"] is String) {
+    if (json["updated_at"] is String) {
       updatedAt = json["updated_at"];
     }
-    if(json["promoted_at"] is String) {
+    if (json["promoted_at"] is String) {
       promotedAt = json["promoted_at"];
     }
-    if(json["width"] is int) {
+    if (json["width"] is int) {
       width = json["width"];
     }
-    if(json["height"] is int) {
+    if (json["height"] is int) {
       height = json["height"];
     }
-    if(json["color"] is String) {
+    if (json["color"] is String) {
       color = json["color"];
     }
-    if(json["blur_hash"] is String) {
+    if (json["blur_hash"] is String) {
       blurHash = json["blur_hash"];
     }
-    if(json["description"] is String) {
+    if (json["description"] is String) {
       description = json["description"];
     }
-    if(json["alt_description"] is String) {
+    if (json["alt_description"] is String) {
       altDescription = json["alt_description"];
     }
-    if(json["breadcrumbs"] is List) {
+    if (json["breadcrumbs"] is List) {
       breadcrumbs = json["breadcrumbs"] ?? [];
     }
-    if(json["urls"] is Map) {
+    if (json["urls"] is Map) {
       urls = json["urls"] == null ? null : Urls2.fromJson(json["urls"]);
     }
-    if(json["links"] is Map) {
+    if (json["links"] is Map) {
       links = json["links"] == null ? null : Links6.fromJson(json["links"]);
     }
-    if(json["likes"] is int) {
+    if (json["likes"] is int) {
       likes = json["likes"];
     }
-    if(json["liked_by_user"] is bool) {
+    if (json["liked_by_user"] is bool) {
       likedByUser = json["liked_by_user"];
     }
-    if(json["current_user_collections"] is List) {
+    if (json["current_user_collections"] is List) {
       currentUserCollections = json["current_user_collections"] ?? [];
     }
     sponsorship = json["sponsorship"];
-    if(json["topic_submissions"] is Map) {
-      topicSubmissions = json["topic_submissions"] == null ? null : TopicSubmissions2.fromJson(json["topic_submissions"]);
+    if (json["topic_submissions"] is Map) {
+      topicSubmissions = json["topic_submissions"] == null
+          ? null
+          : TopicSubmissions2.fromJson(json["topic_submissions"]);
     }
-    if(json["user"] is Map) {
+    if (json["user"] is Map) {
       user = json["user"] == null ? null : User3.fromJson(json["user"]);
     }
   }
@@ -498,25 +599,25 @@ class CoverPhoto1 {
     _data["blur_hash"] = blurHash;
     _data["description"] = description;
     _data["alt_description"] = altDescription;
-    if(breadcrumbs != null) {
+    if (breadcrumbs != null) {
       _data["breadcrumbs"] = breadcrumbs;
     }
-    if(urls != null) {
+    if (urls != null) {
       _data["urls"] = urls?.toJson();
     }
-    if(links != null) {
+    if (links != null) {
       _data["links"] = links?.toJson();
     }
     _data["likes"] = likes;
     _data["liked_by_user"] = likedByUser;
-    if(currentUserCollections != null) {
+    if (currentUserCollections != null) {
       _data["current_user_collections"] = currentUserCollections;
     }
     _data["sponsorship"] = sponsorship;
-    if(topicSubmissions != null) {
+    if (topicSubmissions != null) {
       _data["topic_submissions"] = topicSubmissions?.toJson();
     }
-    if(user != null) {
+    if (user != null) {
       _data["user"] = user?.toJson();
     }
     return _data;
@@ -544,60 +645,81 @@ class User3 {
   bool? forHire;
   Social3? social;
 
-  User3({this.id, this.updatedAt, this.username, this.name, this.firstName, this.lastName, this.twitterUsername, this.portfolioUrl, this.bio, this.location, this.links, this.profileImage, this.instagramUsername, this.totalCollections, this.totalLikes, this.totalPhotos, this.acceptedTos, this.forHire, this.social});
+  User3(
+      {this.id,
+      this.updatedAt,
+      this.username,
+      this.name,
+      this.firstName,
+      this.lastName,
+      this.twitterUsername,
+      this.portfolioUrl,
+      this.bio,
+      this.location,
+      this.links,
+      this.profileImage,
+      this.instagramUsername,
+      this.totalCollections,
+      this.totalLikes,
+      this.totalPhotos,
+      this.acceptedTos,
+      this.forHire,
+      this.social});
 
   User3.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is String) {
+    if (json["id"] is String) {
       id = json["id"];
     }
-    if(json["updated_at"] is String) {
+    if (json["updated_at"] is String) {
       updatedAt = json["updated_at"];
     }
-    if(json["username"] is String) {
+    if (json["username"] is String) {
       username = json["username"];
     }
-    if(json["name"] is String) {
+    if (json["name"] is String) {
       name = json["name"];
     }
-    if(json["first_name"] is String) {
+    if (json["first_name"] is String) {
       firstName = json["first_name"];
     }
-    if(json["last_name"] is String) {
+    if (json["last_name"] is String) {
       lastName = json["last_name"];
     }
-    if(json["twitter_username"] is String) {
+    if (json["twitter_username"] is String) {
       twitterUsername = json["twitter_username"];
     }
     portfolioUrl = json["portfolio_url"];
     bio = json["bio"];
-    if(json["location"] is String) {
+    if (json["location"] is String) {
       location = json["location"];
     }
-    if(json["links"] is Map) {
+    if (json["links"] is Map) {
       links = json["links"] == null ? null : Links7.fromJson(json["links"]);
     }
-    if(json["profile_image"] is Map) {
-      profileImage = json["profile_image"] == null ? null : ProfileImage3.fromJson(json["profile_image"]);
+    if (json["profile_image"] is Map) {
+      profileImage = json["profile_image"] == null
+          ? null
+          : ProfileImage3.fromJson(json["profile_image"]);
     }
-    if(json["instagram_username"] is String) {
+    if (json["instagram_username"] is String) {
       instagramUsername = json["instagram_username"];
     }
-    if(json["total_collections"] is int) {
+    if (json["total_collections"] is int) {
       totalCollections = json["total_collections"];
     }
-    if(json["total_likes"] is int) {
+    if (json["total_likes"] is int) {
       totalLikes = json["total_likes"];
     }
-    if(json["total_photos"] is int) {
+    if (json["total_photos"] is int) {
       totalPhotos = json["total_photos"];
     }
-    if(json["accepted_tos"] is bool) {
+    if (json["accepted_tos"] is bool) {
       acceptedTos = json["accepted_tos"];
     }
-    if(json["for_hire"] is bool) {
+    if (json["for_hire"] is bool) {
       forHire = json["for_hire"];
     }
-    if(json["social"] is Map) {
+    if (json["social"] is Map) {
       social = json["social"] == null ? null : Social3.fromJson(json["social"]);
     }
   }
@@ -614,10 +736,10 @@ class User3 {
     _data["portfolio_url"] = portfolioUrl;
     _data["bio"] = bio;
     _data["location"] = location;
-    if(links != null) {
+    if (links != null) {
       _data["links"] = links?.toJson();
     }
-    if(profileImage != null) {
+    if (profileImage != null) {
       _data["profile_image"] = profileImage?.toJson();
     }
     _data["instagram_username"] = instagramUsername;
@@ -626,7 +748,7 @@ class User3 {
     _data["total_photos"] = totalPhotos;
     _data["accepted_tos"] = acceptedTos;
     _data["for_hire"] = forHire;
-    if(social != null) {
+    if (social != null) {
       _data["social"] = social?.toJson();
     }
     return _data;
@@ -639,14 +761,18 @@ class Social3 {
   String? twitterUsername;
   dynamic paypalEmail;
 
-  Social3({this.instagramUsername, this.portfolioUrl, this.twitterUsername, this.paypalEmail});
+  Social3(
+      {this.instagramUsername,
+      this.portfolioUrl,
+      this.twitterUsername,
+      this.paypalEmail});
 
   Social3.fromJson(Map<String, dynamic> json) {
-    if(json["instagram_username"] is String) {
+    if (json["instagram_username"] is String) {
       instagramUsername = json["instagram_username"];
     }
     portfolioUrl = json["portfolio_url"];
-    if(json["twitter_username"] is String) {
+    if (json["twitter_username"] is String) {
       twitterUsername = json["twitter_username"];
     }
     paypalEmail = json["paypal_email"];
@@ -670,13 +796,13 @@ class ProfileImage3 {
   ProfileImage3({this.small, this.medium, this.large});
 
   ProfileImage3.fromJson(Map<String, dynamic> json) {
-    if(json["small"] is String) {
+    if (json["small"] is String) {
       small = json["small"];
     }
-    if(json["medium"] is String) {
+    if (json["medium"] is String) {
       medium = json["medium"];
     }
-    if(json["large"] is String) {
+    if (json["large"] is String) {
       large = json["large"];
     }
   }
@@ -699,28 +825,35 @@ class Links7 {
   String? following;
   String? followers;
 
-  Links7({this.self, this.html, this.photos, this.likes, this.portfolio, this.following, this.followers});
+  Links7(
+      {this.self,
+      this.html,
+      this.photos,
+      this.likes,
+      this.portfolio,
+      this.following,
+      this.followers});
 
   Links7.fromJson(Map<String, dynamic> json) {
-    if(json["self"] is String) {
+    if (json["self"] is String) {
       self = json["self"];
     }
-    if(json["html"] is String) {
+    if (json["html"] is String) {
       html = json["html"];
     }
-    if(json["photos"] is String) {
+    if (json["photos"] is String) {
       photos = json["photos"];
     }
-    if(json["likes"] is String) {
+    if (json["likes"] is String) {
       likes = json["likes"];
     }
-    if(json["portfolio"] is String) {
+    if (json["portfolio"] is String) {
       portfolio = json["portfolio"];
     }
-    if(json["following"] is String) {
+    if (json["following"] is String) {
       following = json["following"];
     }
-    if(json["followers"] is String) {
+    if (json["followers"] is String) {
       followers = json["followers"];
     }
   }
@@ -741,9 +874,7 @@ class Links7 {
 class TopicSubmissions2 {
   TopicSubmissions2();
 
-  TopicSubmissions2.fromJson(Map<String, dynamic> json) {
-
-  }
+  TopicSubmissions2.fromJson(Map<String, dynamic> json) {}
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> _data = <String, dynamic>{};
@@ -761,16 +892,16 @@ class Links6 {
   Links6({this.self, this.html, this.download, this.downloadLocation});
 
   Links6.fromJson(Map<String, dynamic> json) {
-    if(json["self"] is String) {
+    if (json["self"] is String) {
       self = json["self"];
     }
-    if(json["html"] is String) {
+    if (json["html"] is String) {
       html = json["html"];
     }
-    if(json["download"] is String) {
+    if (json["download"] is String) {
       download = json["download"];
     }
-    if(json["download_location"] is String) {
+    if (json["download_location"] is String) {
       downloadLocation = json["download_location"];
     }
   }
@@ -793,25 +924,31 @@ class Urls2 {
   String? thumb;
   String? smallS3;
 
-  Urls2({this.raw, this.full, this.regular, this.small, this.thumb, this.smallS3});
+  Urls2(
+      {this.raw,
+      this.full,
+      this.regular,
+      this.small,
+      this.thumb,
+      this.smallS3});
 
   Urls2.fromJson(Map<String, dynamic> json) {
-    if(json["raw"] is String) {
+    if (json["raw"] is String) {
       raw = json["raw"];
     }
-    if(json["full"] is String) {
+    if (json["full"] is String) {
       full = json["full"];
     }
-    if(json["regular"] is String) {
+    if (json["regular"] is String) {
       regular = json["regular"];
     }
-    if(json["small"] is String) {
+    if (json["small"] is String) {
       small = json["small"];
     }
-    if(json["thumb"] is String) {
+    if (json["thumb"] is String) {
       thumb = json["thumb"];
     }
-    if(json["small_s3"] is String) {
+    if (json["small_s3"] is String) {
       smallS3 = json["small_s3"];
     }
   }
@@ -849,64 +986,85 @@ class User2 {
   bool? forHire;
   Social2? social;
 
-  User2({this.id, this.updatedAt, this.username, this.name, this.firstName, this.lastName, this.twitterUsername, this.portfolioUrl, this.bio, this.location, this.links, this.profileImage, this.instagramUsername, this.totalCollections, this.totalLikes, this.totalPhotos, this.acceptedTos, this.forHire, this.social});
+  User2(
+      {this.id,
+      this.updatedAt,
+      this.username,
+      this.name,
+      this.firstName,
+      this.lastName,
+      this.twitterUsername,
+      this.portfolioUrl,
+      this.bio,
+      this.location,
+      this.links,
+      this.profileImage,
+      this.instagramUsername,
+      this.totalCollections,
+      this.totalLikes,
+      this.totalPhotos,
+      this.acceptedTos,
+      this.forHire,
+      this.social});
 
   User2.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is String) {
+    if (json["id"] is String) {
       id = json["id"];
     }
-    if(json["updated_at"] is String) {
+    if (json["updated_at"] is String) {
       updatedAt = json["updated_at"];
     }
-    if(json["username"] is String) {
+    if (json["username"] is String) {
       username = json["username"];
     }
-    if(json["name"] is String) {
+    if (json["name"] is String) {
       name = json["name"];
     }
-    if(json["first_name"] is String) {
+    if (json["first_name"] is String) {
       firstName = json["first_name"];
     }
-    if(json["last_name"] is String) {
+    if (json["last_name"] is String) {
       lastName = json["last_name"];
     }
-    if(json["twitter_username"] is String) {
+    if (json["twitter_username"] is String) {
       twitterUsername = json["twitter_username"];
     }
-    if(json["portfolio_url"] is String) {
+    if (json["portfolio_url"] is String) {
       portfolioUrl = json["portfolio_url"];
     }
-    if(json["bio"] is String) {
+    if (json["bio"] is String) {
       bio = json["bio"];
     }
-    if(json["location"] is String) {
+    if (json["location"] is String) {
       location = json["location"];
     }
-    if(json["links"] is Map) {
+    if (json["links"] is Map) {
       links = json["links"] == null ? null : Links5.fromJson(json["links"]);
     }
-    if(json["profile_image"] is Map) {
-      profileImage = json["profile_image"] == null ? null : ProfileImage2.fromJson(json["profile_image"]);
+    if (json["profile_image"] is Map) {
+      profileImage = json["profile_image"] == null
+          ? null
+          : ProfileImage2.fromJson(json["profile_image"]);
     }
-    if(json["instagram_username"] is String) {
+    if (json["instagram_username"] is String) {
       instagramUsername = json["instagram_username"];
     }
-    if(json["total_collections"] is int) {
+    if (json["total_collections"] is int) {
       totalCollections = json["total_collections"];
     }
-    if(json["total_likes"] is int) {
+    if (json["total_likes"] is int) {
       totalLikes = json["total_likes"];
     }
-    if(json["total_photos"] is int) {
+    if (json["total_photos"] is int) {
       totalPhotos = json["total_photos"];
     }
-    if(json["accepted_tos"] is bool) {
+    if (json["accepted_tos"] is bool) {
       acceptedTos = json["accepted_tos"];
     }
-    if(json["for_hire"] is bool) {
+    if (json["for_hire"] is bool) {
       forHire = json["for_hire"];
     }
-    if(json["social"] is Map) {
+    if (json["social"] is Map) {
       social = json["social"] == null ? null : Social2.fromJson(json["social"]);
     }
   }
@@ -923,10 +1081,10 @@ class User2 {
     _data["portfolio_url"] = portfolioUrl;
     _data["bio"] = bio;
     _data["location"] = location;
-    if(links != null) {
+    if (links != null) {
       _data["links"] = links?.toJson();
     }
-    if(profileImage != null) {
+    if (profileImage != null) {
       _data["profile_image"] = profileImage?.toJson();
     }
     _data["instagram_username"] = instagramUsername;
@@ -935,7 +1093,7 @@ class User2 {
     _data["total_photos"] = totalPhotos;
     _data["accepted_tos"] = acceptedTos;
     _data["for_hire"] = forHire;
-    if(social != null) {
+    if (social != null) {
       _data["social"] = social?.toJson();
     }
     return _data;
@@ -948,16 +1106,20 @@ class Social2 {
   String? twitterUsername;
   dynamic paypalEmail;
 
-  Social2({this.instagramUsername, this.portfolioUrl, this.twitterUsername, this.paypalEmail});
+  Social2(
+      {this.instagramUsername,
+      this.portfolioUrl,
+      this.twitterUsername,
+      this.paypalEmail});
 
   Social2.fromJson(Map<String, dynamic> json) {
-    if(json["instagram_username"] is String) {
+    if (json["instagram_username"] is String) {
       instagramUsername = json["instagram_username"];
     }
-    if(json["portfolio_url"] is String) {
+    if (json["portfolio_url"] is String) {
       portfolioUrl = json["portfolio_url"];
     }
-    if(json["twitter_username"] is String) {
+    if (json["twitter_username"] is String) {
       twitterUsername = json["twitter_username"];
     }
     paypalEmail = json["paypal_email"];
@@ -981,13 +1143,13 @@ class ProfileImage2 {
   ProfileImage2({this.small, this.medium, this.large});
 
   ProfileImage2.fromJson(Map<String, dynamic> json) {
-    if(json["small"] is String) {
+    if (json["small"] is String) {
       small = json["small"];
     }
-    if(json["medium"] is String) {
+    if (json["medium"] is String) {
       medium = json["medium"];
     }
-    if(json["large"] is String) {
+    if (json["large"] is String) {
       large = json["large"];
     }
   }
@@ -1010,28 +1172,35 @@ class Links5 {
   String? following;
   String? followers;
 
-  Links5({this.self, this.html, this.photos, this.likes, this.portfolio, this.following, this.followers});
+  Links5(
+      {this.self,
+      this.html,
+      this.photos,
+      this.likes,
+      this.portfolio,
+      this.following,
+      this.followers});
 
   Links5.fromJson(Map<String, dynamic> json) {
-    if(json["self"] is String) {
+    if (json["self"] is String) {
       self = json["self"];
     }
-    if(json["html"] is String) {
+    if (json["html"] is String) {
       html = json["html"];
     }
-    if(json["photos"] is String) {
+    if (json["photos"] is String) {
       photos = json["photos"];
     }
-    if(json["likes"] is String) {
+    if (json["likes"] is String) {
       likes = json["likes"];
     }
-    if(json["portfolio"] is String) {
+    if (json["portfolio"] is String) {
       portfolio = json["portfolio"];
     }
-    if(json["following"] is String) {
+    if (json["following"] is String) {
       following = json["following"];
     }
-    if(json["followers"] is String) {
+    if (json["followers"] is String) {
       followers = json["followers"];
     }
   }
@@ -1058,16 +1227,16 @@ class Links4 {
   Links4({this.self, this.html, this.photos, this.related});
 
   Links4.fromJson(Map<String, dynamic> json) {
-    if(json["self"] is String) {
+    if (json["self"] is String) {
       self = json["self"];
     }
-    if(json["html"] is String) {
+    if (json["html"] is String) {
       html = json["html"];
     }
-    if(json["photos"] is String) {
+    if (json["photos"] is String) {
       photos = json["photos"];
     }
-    if(json["related"] is String) {
+    if (json["related"] is String) {
       related = json["related"];
     }
   }
@@ -1090,13 +1259,13 @@ class Tags1 {
   Tags1({this.type, this.title, this.source});
 
   Tags1.fromJson(Map<String, dynamic> json) {
-    if(json["type"] is String) {
+    if (json["type"] is String) {
       type = json["type"];
     }
-    if(json["title"] is String) {
+    if (json["title"] is String) {
       title = json["title"];
     }
-    if(json["source"] is Map) {
+    if (json["source"] is Map) {
       source = json["source"] == null ? null : Source.fromJson(json["source"]);
     }
   }
@@ -1105,7 +1274,7 @@ class Tags1 {
     final Map<String, dynamic> _data = <String, dynamic>{};
     _data["type"] = type;
     _data["title"] = title;
-    if(source != null) {
+    if (source != null) {
       _data["source"] = source?.toJson();
     }
     return _data;
@@ -1121,35 +1290,45 @@ class Source {
   String? metaDescription;
   CoverPhoto? coverPhoto;
 
-  Source({this.ancestry, this.title, this.subtitle, this.description, this.metaTitle, this.metaDescription, this.coverPhoto});
+  Source(
+      {this.ancestry,
+      this.title,
+      this.subtitle,
+      this.description,
+      this.metaTitle,
+      this.metaDescription,
+      this.coverPhoto});
 
   Source.fromJson(Map<String, dynamic> json) {
-    if(json["ancestry"] is Map) {
-      ancestry = json["ancestry"] == null ? null : Ancestry.fromJson(json["ancestry"]);
+    if (json["ancestry"] is Map) {
+      ancestry =
+          json["ancestry"] == null ? null : Ancestry.fromJson(json["ancestry"]);
     }
-    if(json["title"] is String) {
+    if (json["title"] is String) {
       title = json["title"];
     }
-    if(json["subtitle"] is String) {
+    if (json["subtitle"] is String) {
       subtitle = json["subtitle"];
     }
-    if(json["description"] is String) {
+    if (json["description"] is String) {
       description = json["description"];
     }
-    if(json["meta_title"] is String) {
+    if (json["meta_title"] is String) {
       metaTitle = json["meta_title"];
     }
-    if(json["meta_description"] is String) {
+    if (json["meta_description"] is String) {
       metaDescription = json["meta_description"];
     }
-    if(json["cover_photo"] is Map) {
-      coverPhoto = json["cover_photo"] == null ? null : CoverPhoto.fromJson(json["cover_photo"]);
+    if (json["cover_photo"] is Map) {
+      coverPhoto = json["cover_photo"] == null
+          ? null
+          : CoverPhoto.fromJson(json["cover_photo"]);
     }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> _data = <String, dynamic>{};
-    if(ancestry != null) {
+    if (ancestry != null) {
       _data["ancestry"] = ancestry?.toJson();
     }
     _data["title"] = title;
@@ -1157,7 +1336,7 @@ class Source {
     _data["description"] = description;
     _data["meta_title"] = metaTitle;
     _data["meta_description"] = metaDescription;
-    if(coverPhoto != null) {
+    if (coverPhoto != null) {
       _data["cover_photo"] = coverPhoto?.toJson();
     }
     return _data;
@@ -1186,63 +1365,85 @@ class CoverPhoto {
   TopicSubmissions1? topicSubmissions;
   User1? user;
 
-  CoverPhoto({this.id, this.slug, this.createdAt, this.updatedAt, this.promotedAt, this.width, this.height, this.color, this.blurHash, this.description, this.altDescription, this.breadcrumbs, this.urls, this.links, this.likes, this.likedByUser, this.currentUserCollections, this.sponsorship, this.topicSubmissions, this.user});
+  CoverPhoto(
+      {this.id,
+      this.slug,
+      this.createdAt,
+      this.updatedAt,
+      this.promotedAt,
+      this.width,
+      this.height,
+      this.color,
+      this.blurHash,
+      this.description,
+      this.altDescription,
+      this.breadcrumbs,
+      this.urls,
+      this.links,
+      this.likes,
+      this.likedByUser,
+      this.currentUserCollections,
+      this.sponsorship,
+      this.topicSubmissions,
+      this.user});
 
   CoverPhoto.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is String) {
+    if (json["id"] is String) {
       id = json["id"];
     }
-    if(json["slug"] is String) {
+    if (json["slug"] is String) {
       slug = json["slug"];
     }
-    if(json["created_at"] is String) {
+    if (json["created_at"] is String) {
       createdAt = json["created_at"];
     }
-    if(json["updated_at"] is String) {
+    if (json["updated_at"] is String) {
       updatedAt = json["updated_at"];
     }
-    if(json["promoted_at"] is String) {
+    if (json["promoted_at"] is String) {
       promotedAt = json["promoted_at"];
     }
-    if(json["width"] is int) {
+    if (json["width"] is int) {
       width = json["width"];
     }
-    if(json["height"] is int) {
+    if (json["height"] is int) {
       height = json["height"];
     }
-    if(json["color"] is String) {
+    if (json["color"] is String) {
       color = json["color"];
     }
-    if(json["blur_hash"] is String) {
+    if (json["blur_hash"] is String) {
       blurHash = json["blur_hash"];
     }
     description = json["description"];
-    if(json["alt_description"] is String) {
+    if (json["alt_description"] is String) {
       altDescription = json["alt_description"];
     }
-    if(json["breadcrumbs"] is List) {
+    if (json["breadcrumbs"] is List) {
       breadcrumbs = json["breadcrumbs"] ?? [];
     }
-    if(json["urls"] is Map) {
+    if (json["urls"] is Map) {
       urls = json["urls"] == null ? null : Urls1.fromJson(json["urls"]);
     }
-    if(json["links"] is Map) {
+    if (json["links"] is Map) {
       links = json["links"] == null ? null : Links2.fromJson(json["links"]);
     }
-    if(json["likes"] is int) {
+    if (json["likes"] is int) {
       likes = json["likes"];
     }
-    if(json["liked_by_user"] is bool) {
+    if (json["liked_by_user"] is bool) {
       likedByUser = json["liked_by_user"];
     }
-    if(json["current_user_collections"] is List) {
+    if (json["current_user_collections"] is List) {
       currentUserCollections = json["current_user_collections"] ?? [];
     }
     sponsorship = json["sponsorship"];
-    if(json["topic_submissions"] is Map) {
-      topicSubmissions = json["topic_submissions"] == null ? null : TopicSubmissions1.fromJson(json["topic_submissions"]);
+    if (json["topic_submissions"] is Map) {
+      topicSubmissions = json["topic_submissions"] == null
+          ? null
+          : TopicSubmissions1.fromJson(json["topic_submissions"]);
     }
-    if(json["user"] is Map) {
+    if (json["user"] is Map) {
       user = json["user"] == null ? null : User1.fromJson(json["user"]);
     }
   }
@@ -1260,25 +1461,25 @@ class CoverPhoto {
     _data["blur_hash"] = blurHash;
     _data["description"] = description;
     _data["alt_description"] = altDescription;
-    if(breadcrumbs != null) {
+    if (breadcrumbs != null) {
       _data["breadcrumbs"] = breadcrumbs;
     }
-    if(urls != null) {
+    if (urls != null) {
       _data["urls"] = urls?.toJson();
     }
-    if(links != null) {
+    if (links != null) {
       _data["links"] = links?.toJson();
     }
     _data["likes"] = likes;
     _data["liked_by_user"] = likedByUser;
-    if(currentUserCollections != null) {
+    if (currentUserCollections != null) {
       _data["current_user_collections"] = currentUserCollections;
     }
     _data["sponsorship"] = sponsorship;
-    if(topicSubmissions != null) {
+    if (topicSubmissions != null) {
       _data["topic_submissions"] = topicSubmissions?.toJson();
     }
-    if(user != null) {
+    if (user != null) {
       _data["user"] = user?.toJson();
     }
     return _data;
@@ -1306,64 +1507,85 @@ class User1 {
   bool? forHire;
   Social1? social;
 
-  User1({this.id, this.updatedAt, this.username, this.name, this.firstName, this.lastName, this.twitterUsername, this.portfolioUrl, this.bio, this.location, this.links, this.profileImage, this.instagramUsername, this.totalCollections, this.totalLikes, this.totalPhotos, this.acceptedTos, this.forHire, this.social});
+  User1(
+      {this.id,
+      this.updatedAt,
+      this.username,
+      this.name,
+      this.firstName,
+      this.lastName,
+      this.twitterUsername,
+      this.portfolioUrl,
+      this.bio,
+      this.location,
+      this.links,
+      this.profileImage,
+      this.instagramUsername,
+      this.totalCollections,
+      this.totalLikes,
+      this.totalPhotos,
+      this.acceptedTos,
+      this.forHire,
+      this.social});
 
   User1.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is String) {
+    if (json["id"] is String) {
       id = json["id"];
     }
-    if(json["updated_at"] is String) {
+    if (json["updated_at"] is String) {
       updatedAt = json["updated_at"];
     }
-    if(json["username"] is String) {
+    if (json["username"] is String) {
       username = json["username"];
     }
-    if(json["name"] is String) {
+    if (json["name"] is String) {
       name = json["name"];
     }
-    if(json["first_name"] is String) {
+    if (json["first_name"] is String) {
       firstName = json["first_name"];
     }
-    if(json["last_name"] is String) {
+    if (json["last_name"] is String) {
       lastName = json["last_name"];
     }
-    if(json["twitter_username"] is String) {
+    if (json["twitter_username"] is String) {
       twitterUsername = json["twitter_username"];
     }
-    if(json["portfolio_url"] is String) {
+    if (json["portfolio_url"] is String) {
       portfolioUrl = json["portfolio_url"];
     }
-    if(json["bio"] is String) {
+    if (json["bio"] is String) {
       bio = json["bio"];
     }
-    if(json["location"] is String) {
+    if (json["location"] is String) {
       location = json["location"];
     }
-    if(json["links"] is Map) {
+    if (json["links"] is Map) {
       links = json["links"] == null ? null : Links3.fromJson(json["links"]);
     }
-    if(json["profile_image"] is Map) {
-      profileImage = json["profile_image"] == null ? null : ProfileImage1.fromJson(json["profile_image"]);
+    if (json["profile_image"] is Map) {
+      profileImage = json["profile_image"] == null
+          ? null
+          : ProfileImage1.fromJson(json["profile_image"]);
     }
-    if(json["instagram_username"] is String) {
+    if (json["instagram_username"] is String) {
       instagramUsername = json["instagram_username"];
     }
-    if(json["total_collections"] is int) {
+    if (json["total_collections"] is int) {
       totalCollections = json["total_collections"];
     }
-    if(json["total_likes"] is int) {
+    if (json["total_likes"] is int) {
       totalLikes = json["total_likes"];
     }
-    if(json["total_photos"] is int) {
+    if (json["total_photos"] is int) {
       totalPhotos = json["total_photos"];
     }
-    if(json["accepted_tos"] is bool) {
+    if (json["accepted_tos"] is bool) {
       acceptedTos = json["accepted_tos"];
     }
-    if(json["for_hire"] is bool) {
+    if (json["for_hire"] is bool) {
       forHire = json["for_hire"];
     }
-    if(json["social"] is Map) {
+    if (json["social"] is Map) {
       social = json["social"] == null ? null : Social1.fromJson(json["social"]);
     }
   }
@@ -1380,10 +1602,10 @@ class User1 {
     _data["portfolio_url"] = portfolioUrl;
     _data["bio"] = bio;
     _data["location"] = location;
-    if(links != null) {
+    if (links != null) {
       _data["links"] = links?.toJson();
     }
-    if(profileImage != null) {
+    if (profileImage != null) {
       _data["profile_image"] = profileImage?.toJson();
     }
     _data["instagram_username"] = instagramUsername;
@@ -1392,7 +1614,7 @@ class User1 {
     _data["total_photos"] = totalPhotos;
     _data["accepted_tos"] = acceptedTos;
     _data["for_hire"] = forHire;
-    if(social != null) {
+    if (social != null) {
       _data["social"] = social?.toJson();
     }
     return _data;
@@ -1405,16 +1627,20 @@ class Social1 {
   String? twitterUsername;
   dynamic paypalEmail;
 
-  Social1({this.instagramUsername, this.portfolioUrl, this.twitterUsername, this.paypalEmail});
+  Social1(
+      {this.instagramUsername,
+      this.portfolioUrl,
+      this.twitterUsername,
+      this.paypalEmail});
 
   Social1.fromJson(Map<String, dynamic> json) {
-    if(json["instagram_username"] is String) {
+    if (json["instagram_username"] is String) {
       instagramUsername = json["instagram_username"];
     }
-    if(json["portfolio_url"] is String) {
+    if (json["portfolio_url"] is String) {
       portfolioUrl = json["portfolio_url"];
     }
-    if(json["twitter_username"] is String) {
+    if (json["twitter_username"] is String) {
       twitterUsername = json["twitter_username"];
     }
     paypalEmail = json["paypal_email"];
@@ -1438,13 +1664,13 @@ class ProfileImage1 {
   ProfileImage1({this.small, this.medium, this.large});
 
   ProfileImage1.fromJson(Map<String, dynamic> json) {
-    if(json["small"] is String) {
+    if (json["small"] is String) {
       small = json["small"];
     }
-    if(json["medium"] is String) {
+    if (json["medium"] is String) {
       medium = json["medium"];
     }
-    if(json["large"] is String) {
+    if (json["large"] is String) {
       large = json["large"];
     }
   }
@@ -1467,28 +1693,35 @@ class Links3 {
   String? following;
   String? followers;
 
-  Links3({this.self, this.html, this.photos, this.likes, this.portfolio, this.following, this.followers});
+  Links3(
+      {this.self,
+      this.html,
+      this.photos,
+      this.likes,
+      this.portfolio,
+      this.following,
+      this.followers});
 
   Links3.fromJson(Map<String, dynamic> json) {
-    if(json["self"] is String) {
+    if (json["self"] is String) {
       self = json["self"];
     }
-    if(json["html"] is String) {
+    if (json["html"] is String) {
       html = json["html"];
     }
-    if(json["photos"] is String) {
+    if (json["photos"] is String) {
       photos = json["photos"];
     }
-    if(json["likes"] is String) {
+    if (json["likes"] is String) {
       likes = json["likes"];
     }
-    if(json["portfolio"] is String) {
+    if (json["portfolio"] is String) {
       portfolio = json["portfolio"];
     }
-    if(json["following"] is String) {
+    if (json["following"] is String) {
       following = json["following"];
     }
-    if(json["followers"] is String) {
+    if (json["followers"] is String) {
       followers = json["followers"];
     }
   }
@@ -1512,14 +1745,16 @@ class TopicSubmissions1 {
   TopicSubmissions1({this.spirituality});
 
   TopicSubmissions1.fromJson(Map<String, dynamic> json) {
-    if(json["spirituality"] is Map) {
-      spirituality = json["spirituality"] == null ? null : Spirituality.fromJson(json["spirituality"]);
+    if (json["spirituality"] is Map) {
+      spirituality = json["spirituality"] == null
+          ? null
+          : Spirituality.fromJson(json["spirituality"]);
     }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> _data = <String, dynamic>{};
-    if(spirituality != null) {
+    if (spirituality != null) {
       _data["spirituality"] = spirituality?.toJson();
     }
     return _data;
@@ -1533,10 +1768,10 @@ class Spirituality {
   Spirituality({this.status, this.approvedOn});
 
   Spirituality.fromJson(Map<String, dynamic> json) {
-    if(json["status"] is String) {
+    if (json["status"] is String) {
       status = json["status"];
     }
-    if(json["approved_on"] is String) {
+    if (json["approved_on"] is String) {
       approvedOn = json["approved_on"];
     }
   }
@@ -1558,16 +1793,16 @@ class Links2 {
   Links2({this.self, this.html, this.download, this.downloadLocation});
 
   Links2.fromJson(Map<String, dynamic> json) {
-    if(json["self"] is String) {
+    if (json["self"] is String) {
       self = json["self"];
     }
-    if(json["html"] is String) {
+    if (json["html"] is String) {
       html = json["html"];
     }
-    if(json["download"] is String) {
+    if (json["download"] is String) {
       download = json["download"];
     }
-    if(json["download_location"] is String) {
+    if (json["download_location"] is String) {
       downloadLocation = json["download_location"];
     }
   }
@@ -1590,25 +1825,31 @@ class Urls1 {
   String? thumb;
   String? smallS3;
 
-  Urls1({this.raw, this.full, this.regular, this.small, this.thumb, this.smallS3});
+  Urls1(
+      {this.raw,
+      this.full,
+      this.regular,
+      this.small,
+      this.thumb,
+      this.smallS3});
 
   Urls1.fromJson(Map<String, dynamic> json) {
-    if(json["raw"] is String) {
+    if (json["raw"] is String) {
       raw = json["raw"];
     }
-    if(json["full"] is String) {
+    if (json["full"] is String) {
       full = json["full"];
     }
-    if(json["regular"] is String) {
+    if (json["regular"] is String) {
       regular = json["regular"];
     }
-    if(json["small"] is String) {
+    if (json["small"] is String) {
       small = json["small"];
     }
-    if(json["thumb"] is String) {
+    if (json["thumb"] is String) {
       thumb = json["thumb"];
     }
-    if(json["small_s3"] is String) {
+    if (json["small_s3"] is String) {
       smallS3 = json["small_s3"];
     }
   }
@@ -1633,26 +1874,29 @@ class Ancestry {
   Ancestry({this.type, this.category, this.subcategory});
 
   Ancestry.fromJson(Map<String, dynamic> json) {
-    if(json["type"] is Map) {
+    if (json["type"] is Map) {
       type = json["type"] == null ? null : Type.fromJson(json["type"]);
     }
-    if(json["category"] is Map) {
-      category = json["category"] == null ? null : Category.fromJson(json["category"]);
+    if (json["category"] is Map) {
+      category =
+          json["category"] == null ? null : Category.fromJson(json["category"]);
     }
-    if(json["subcategory"] is Map) {
-      subcategory = json["subcategory"] == null ? null : Subcategory.fromJson(json["subcategory"]);
+    if (json["subcategory"] is Map) {
+      subcategory = json["subcategory"] == null
+          ? null
+          : Subcategory.fromJson(json["subcategory"]);
     }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> _data = <String, dynamic>{};
-    if(type != null) {
+    if (type != null) {
       _data["type"] = type?.toJson();
     }
-    if(category != null) {
+    if (category != null) {
       _data["category"] = category?.toJson();
     }
-    if(subcategory != null) {
+    if (subcategory != null) {
       _data["subcategory"] = subcategory?.toJson();
     }
     return _data;
@@ -1666,10 +1910,10 @@ class Subcategory {
   Subcategory({this.slug, this.prettySlug});
 
   Subcategory.fromJson(Map<String, dynamic> json) {
-    if(json["slug"] is String) {
+    if (json["slug"] is String) {
       slug = json["slug"];
     }
-    if(json["pretty_slug"] is String) {
+    if (json["pretty_slug"] is String) {
       prettySlug = json["pretty_slug"];
     }
   }
@@ -1689,10 +1933,10 @@ class Category {
   Category({this.slug, this.prettySlug});
 
   Category.fromJson(Map<String, dynamic> json) {
-    if(json["slug"] is String) {
+    if (json["slug"] is String) {
       slug = json["slug"];
     }
-    if(json["pretty_slug"] is String) {
+    if (json["pretty_slug"] is String) {
       prettySlug = json["pretty_slug"];
     }
   }
@@ -1712,10 +1956,10 @@ class Type {
   Type({this.slug, this.prettySlug});
 
   Type.fromJson(Map<String, dynamic> json) {
-    if(json["slug"] is String) {
+    if (json["slug"] is String) {
       slug = json["slug"];
     }
-    if(json["pretty_slug"] is String) {
+    if (json["pretty_slug"] is String) {
       prettySlug = json["pretty_slug"];
     }
   }
@@ -1737,16 +1981,16 @@ class Topics {
   Topics({this.id, this.title, this.slug, this.visibility});
 
   Topics.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is String) {
+    if (json["id"] is String) {
       id = json["id"];
     }
-    if(json["title"] is String) {
+    if (json["title"] is String) {
       title = json["title"];
     }
-    if(json["slug"] is String) {
+    if (json["slug"] is String) {
       slug = json["slug"];
     }
-    if(json["visibility"] is String) {
+    if (json["visibility"] is String) {
       visibility = json["visibility"];
     }
   }
@@ -1768,10 +2012,10 @@ class TagsPreview {
   TagsPreview({this.type, this.title});
 
   TagsPreview.fromJson(Map<String, dynamic> json) {
-    if(json["type"] is String) {
+    if (json["type"] is String) {
       type = json["type"];
     }
-    if(json["title"] is String) {
+    if (json["title"] is String) {
       title = json["title"];
     }
   }
@@ -1791,10 +2035,10 @@ class Tags {
   Tags({this.type, this.title});
 
   Tags.fromJson(Map<String, dynamic> json) {
-    if(json["type"] is String) {
+    if (json["type"] is String) {
       type = json["type"];
     }
-    if(json["title"] is String) {
+    if (json["title"] is String) {
       title = json["title"];
     }
   }
@@ -1813,7 +2057,7 @@ class Meta {
   Meta({this.index});
 
   Meta.fromJson(Map<String, dynamic> json) {
-    if(json["index"] is bool) {
+    if (json["index"] is bool) {
       index = json["index"];
     }
   }
@@ -1834,17 +2078,18 @@ class Location {
   Location({this.name, this.city, this.country, this.position});
 
   Location.fromJson(Map<String, dynamic> json) {
-    if(json["name"] is String) {
+    if (json["name"] is String) {
       name = json["name"];
     }
-    if(json["city"] is String) {
+    if (json["city"] is String) {
       city = json["city"];
     }
-    if(json["country"] is String) {
+    if (json["country"] is String) {
       country = json["country"];
     }
-    if(json["position"] is Map) {
-      position = json["position"] == null ? null : Position.fromJson(json["position"]);
+    if (json["position"] is Map) {
+      position =
+          json["position"] == null ? null : Position.fromJson(json["position"]);
     }
   }
 
@@ -1853,7 +2098,7 @@ class Location {
     _data["name"] = name;
     _data["city"] = city;
     _data["country"] = country;
-    if(position != null) {
+    if (position != null) {
       _data["position"] = position?.toJson();
     }
     return _data;
@@ -1867,10 +2112,10 @@ class Position {
   Position({this.latitude, this.longitude});
 
   Position.fromJson(Map<String, dynamic> json) {
-    if(json["latitude"] is double) {
+    if (json["latitude"] is double) {
       latitude = json["latitude"];
     }
-    if(json["longitude"] is double) {
+    if (json["longitude"] is double) {
       longitude = json["longitude"];
     }
   }
@@ -1892,28 +2137,35 @@ class Exif {
   String? focalLength;
   int? iso;
 
-  Exif({this.make, this.model, this.name, this.exposureTime, this.aperture, this.focalLength, this.iso});
+  Exif(
+      {this.make,
+      this.model,
+      this.name,
+      this.exposureTime,
+      this.aperture,
+      this.focalLength,
+      this.iso});
 
   Exif.fromJson(Map<String, dynamic> json) {
-    if(json["make"] is String) {
+    if (json["make"] is String) {
       make = json["make"];
     }
-    if(json["model"] is String) {
+    if (json["model"] is String) {
       model = json["model"];
     }
-    if(json["name"] is String) {
+    if (json["name"] is String) {
       name = json["name"];
     }
-    if(json["exposure_time"] is String) {
+    if (json["exposure_time"] is String) {
       exposureTime = json["exposure_time"];
     }
-    if(json["aperture"] is String) {
+    if (json["aperture"] is String) {
       aperture = json["aperture"];
     }
-    if(json["focal_length"] is String) {
+    if (json["focal_length"] is String) {
       focalLength = json["focal_length"];
     }
-    if(json["iso"] is int) {
+    if (json["iso"] is int) {
       iso = json["iso"];
     }
   }
@@ -1952,64 +2204,85 @@ class User {
   bool? forHire;
   Social? social;
 
-  User({this.id, this.updatedAt, this.username, this.name, this.firstName, this.lastName, this.twitterUsername, this.portfolioUrl, this.bio, this.location, this.links, this.profileImage, this.instagramUsername, this.totalCollections, this.totalLikes, this.totalPhotos, this.acceptedTos, this.forHire, this.social});
+  User(
+      {this.id,
+      this.updatedAt,
+      this.username,
+      this.name,
+      this.firstName,
+      this.lastName,
+      this.twitterUsername,
+      this.portfolioUrl,
+      this.bio,
+      this.location,
+      this.links,
+      this.profileImage,
+      this.instagramUsername,
+      this.totalCollections,
+      this.totalLikes,
+      this.totalPhotos,
+      this.acceptedTos,
+      this.forHire,
+      this.social});
 
   User.fromJson(Map<String, dynamic> json) {
-    if(json["id"] is String) {
+    if (json["id"] is String) {
       id = json["id"];
     }
-    if(json["updated_at"] is String) {
+    if (json["updated_at"] is String) {
       updatedAt = json["updated_at"];
     }
-    if(json["username"] is String) {
+    if (json["username"] is String) {
       username = json["username"];
     }
-    if(json["name"] is String) {
+    if (json["name"] is String) {
       name = json["name"];
     }
-    if(json["first_name"] is String) {
+    if (json["first_name"] is String) {
       firstName = json["first_name"];
     }
-    if(json["last_name"] is String) {
+    if (json["last_name"] is String) {
       lastName = json["last_name"];
     }
-    if(json["twitter_username"] is String) {
+    if (json["twitter_username"] is String) {
       twitterUsername = json["twitter_username"];
     }
-    if(json["portfolio_url"] is String) {
+    if (json["portfolio_url"] is String) {
       portfolioUrl = json["portfolio_url"];
     }
-    if(json["bio"] is String) {
+    if (json["bio"] is String) {
       bio = json["bio"];
     }
-    if(json["location"] is String) {
+    if (json["location"] is String) {
       location = json["location"];
     }
-    if(json["links"] is Map) {
+    if (json["links"] is Map) {
       links = json["links"] == null ? null : Links1.fromJson(json["links"]);
     }
-    if(json["profile_image"] is Map) {
-      profileImage = json["profile_image"] == null ? null : ProfileImage.fromJson(json["profile_image"]);
+    if (json["profile_image"] is Map) {
+      profileImage = json["profile_image"] == null
+          ? null
+          : ProfileImage.fromJson(json["profile_image"]);
     }
-    if(json["instagram_username"] is String) {
+    if (json["instagram_username"] is String) {
       instagramUsername = json["instagram_username"];
     }
-    if(json["total_collections"] is int) {
+    if (json["total_collections"] is int) {
       totalCollections = json["total_collections"];
     }
-    if(json["total_likes"] is int) {
+    if (json["total_likes"] is int) {
       totalLikes = json["total_likes"];
     }
-    if(json["total_photos"] is int) {
+    if (json["total_photos"] is int) {
       totalPhotos = json["total_photos"];
     }
-    if(json["accepted_tos"] is bool) {
+    if (json["accepted_tos"] is bool) {
       acceptedTos = json["accepted_tos"];
     }
-    if(json["for_hire"] is bool) {
+    if (json["for_hire"] is bool) {
       forHire = json["for_hire"];
     }
-    if(json["social"] is Map) {
+    if (json["social"] is Map) {
       social = json["social"] == null ? null : Social.fromJson(json["social"]);
     }
   }
@@ -2026,10 +2299,10 @@ class User {
     _data["portfolio_url"] = portfolioUrl;
     _data["bio"] = bio;
     _data["location"] = location;
-    if(links != null) {
+    if (links != null) {
       _data["links"] = links?.toJson();
     }
-    if(profileImage != null) {
+    if (profileImage != null) {
       _data["profile_image"] = profileImage?.toJson();
     }
     _data["instagram_username"] = instagramUsername;
@@ -2038,7 +2311,7 @@ class User {
     _data["total_photos"] = totalPhotos;
     _data["accepted_tos"] = acceptedTos;
     _data["for_hire"] = forHire;
-    if(social != null) {
+    if (social != null) {
       _data["social"] = social?.toJson();
     }
     return _data;
@@ -2051,16 +2324,20 @@ class Social {
   String? twitterUsername;
   dynamic paypalEmail;
 
-  Social({this.instagramUsername, this.portfolioUrl, this.twitterUsername, this.paypalEmail});
+  Social(
+      {this.instagramUsername,
+      this.portfolioUrl,
+      this.twitterUsername,
+      this.paypalEmail});
 
   Social.fromJson(Map<String, dynamic> json) {
-    if(json["instagram_username"] is String) {
+    if (json["instagram_username"] is String) {
       instagramUsername = json["instagram_username"];
     }
-    if(json["portfolio_url"] is String) {
+    if (json["portfolio_url"] is String) {
       portfolioUrl = json["portfolio_url"];
     }
-    if(json["twitter_username"] is String) {
+    if (json["twitter_username"] is String) {
       twitterUsername = json["twitter_username"];
     }
     paypalEmail = json["paypal_email"];
@@ -2084,13 +2361,13 @@ class ProfileImage {
   ProfileImage({this.small, this.medium, this.large});
 
   ProfileImage.fromJson(Map<String, dynamic> json) {
-    if(json["small"] is String) {
+    if (json["small"] is String) {
       small = json["small"];
     }
-    if(json["medium"] is String) {
+    if (json["medium"] is String) {
       medium = json["medium"];
     }
-    if(json["large"] is String) {
+    if (json["large"] is String) {
       large = json["large"];
     }
   }
@@ -2113,28 +2390,35 @@ class Links1 {
   String? following;
   String? followers;
 
-  Links1({this.self, this.html, this.photos, this.likes, this.portfolio, this.following, this.followers});
+  Links1(
+      {this.self,
+      this.html,
+      this.photos,
+      this.likes,
+      this.portfolio,
+      this.following,
+      this.followers});
 
   Links1.fromJson(Map<String, dynamic> json) {
-    if(json["self"] is String) {
+    if (json["self"] is String) {
       self = json["self"];
     }
-    if(json["html"] is String) {
+    if (json["html"] is String) {
       html = json["html"];
     }
-    if(json["photos"] is String) {
+    if (json["photos"] is String) {
       photos = json["photos"];
     }
-    if(json["likes"] is String) {
+    if (json["likes"] is String) {
       likes = json["likes"];
     }
-    if(json["portfolio"] is String) {
+    if (json["portfolio"] is String) {
       portfolio = json["portfolio"];
     }
-    if(json["following"] is String) {
+    if (json["following"] is String) {
       following = json["following"];
     }
-    if(json["followers"] is String) {
+    if (json["followers"] is String) {
       followers = json["followers"];
     }
   }
@@ -2158,14 +2442,16 @@ class TopicSubmissions {
   TopicSubmissions({this.streetPhotography});
 
   TopicSubmissions.fromJson(Map<String, dynamic> json) {
-    if(json["street-photography"] is Map) {
-      streetPhotography = json["street-photography"] == null ? null : StreetPhotography.fromJson(json["street-photography"]);
+    if (json["street-photography"] is Map) {
+      streetPhotography = json["street-photography"] == null
+          ? null
+          : StreetPhotography.fromJson(json["street-photography"]);
     }
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> _data = <String, dynamic>{};
-    if(streetPhotography != null) {
+    if (streetPhotography != null) {
       _data["street-photography"] = streetPhotography?.toJson();
     }
     return _data;
@@ -2179,10 +2465,10 @@ class StreetPhotography {
   StreetPhotography({this.status, this.approvedOn});
 
   StreetPhotography.fromJson(Map<String, dynamic> json) {
-    if(json["status"] is String) {
+    if (json["status"] is String) {
       status = json["status"];
     }
-    if(json["approved_on"] is String) {
+    if (json["approved_on"] is String) {
       approvedOn = json["approved_on"];
     }
   }
@@ -2204,16 +2490,16 @@ class Links {
   Links({this.self, this.html, this.download, this.downloadLocation});
 
   Links.fromJson(Map<String, dynamic> json) {
-    if(json["self"] is String) {
+    if (json["self"] is String) {
       self = json["self"];
     }
-    if(json["html"] is String) {
+    if (json["html"] is String) {
       html = json["html"];
     }
-    if(json["download"] is String) {
+    if (json["download"] is String) {
       download = json["download"];
     }
-    if(json["download_location"] is String) {
+    if (json["download_location"] is String) {
       downloadLocation = json["download_location"];
     }
   }
@@ -2236,25 +2522,31 @@ class Urls {
   String? thumb;
   String? smallS3;
 
-  Urls({this.raw, this.full, this.regular, this.small, this.thumb, this.smallS3});
+  Urls(
+      {this.raw,
+      this.full,
+      this.regular,
+      this.small,
+      this.thumb,
+      this.smallS3});
 
   Urls.fromJson(Map<String, dynamic> json) {
-    if(json["raw"] is String) {
+    if (json["raw"] is String) {
       raw = json["raw"];
     }
-    if(json["full"] is String) {
+    if (json["full"] is String) {
       full = json["full"];
     }
-    if(json["regular"] is String) {
+    if (json["regular"] is String) {
       regular = json["regular"];
     }
-    if(json["small"] is String) {
+    if (json["small"] is String) {
       small = json["small"];
     }
-    if(json["thumb"] is String) {
+    if (json["thumb"] is String) {
       thumb = json["thumb"];
     }
-    if(json["small_s3"] is String) {
+    if (json["small_s3"] is String) {
       smallS3 = json["small_s3"];
     }
   }
