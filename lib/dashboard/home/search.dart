@@ -2,8 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wallpix/core/colors.dart';
-import 'package:wallpix/core/dim.dart';
+import 'package:wallpixel/core/colors.dart';
+import 'package:wallpixel/core/dim.dart';
 
 class SearchScreen extends StatelessWidget {
   SearchScreen({super.key});

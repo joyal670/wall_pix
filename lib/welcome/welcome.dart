@@ -3,9 +3,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:wallpix/core/dim.dart';
+import 'package:wallpixel/core/dim.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:wallpix/login/login.dart';
+import 'package:wallpixel/dashboard/dashboard.dart';
+import 'package:wallpixel/login/login.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -47,7 +48,7 @@ class WelcomeScreen extends StatelessWidget {
                           PageTransition(
                               duration: Duration(milliseconds: 400),
                               type: PageTransitionType.leftToRight,
-                              child: LoginScreen()));
+                              child: Dashboard()));
                     },
                     style: ButtonStyle(),
                     icon: Icon(Icons.arrow_right_alt),

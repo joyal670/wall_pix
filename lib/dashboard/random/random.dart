@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wallpix/dashboard/home/tabs/recent.dart';
+import 'package:wallpixel/dashboard/home/tabs/recent.dart';
 
 import '../CustomappBar.dart';
 import '../home/tabItems.dart';

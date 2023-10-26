@@ -2,8 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wallpix/core/colors.dart';
-import 'package:wallpix/dashboard/home/search.dart';
+import 'package:wallpixel/core/colors.dart';
+import 'package:wallpixel/dashboard/home/search.dart';
 
 import '../core/dim.dart';
 import 'package:page_transition/page_transition.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wallpix/splash/splash.dart';
+import 'package:wallpixel/splash/splash.dart';
 
 void main() {
   runApp(const MainApp());

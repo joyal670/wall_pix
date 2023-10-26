@@ -3,13 +3,11 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:wallpixel/api/url.dart';
+import 'package:wallpixel/model/category_model.dart';
 
-import 'package:wallpix/api/url.dart';
-import 'package:wallpix/dashboard/home/tabs/latest.dart';
-import 'package:wallpix/model/category_model.dart';
-import 'package:wallpix/model/collection_details_response.dart';
-import 'package:wallpix/model/like_photo_response.dart';
-
+import '../model/collection_details_response.dart';
+import '../model/like_photo_response.dart';
 import '../model/photo_model.dart';
 import 'package:gson/gson.dart';
 

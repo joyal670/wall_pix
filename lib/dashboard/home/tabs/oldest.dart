@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../api/api.dart';
 import '../../../core/dim.dart';
 import '../../../model/photo_model.dart';
-import 'package:wallpix/dashboard/home/view_image.dart';
+import 'package:wallpixel/dashboard/home/view_image.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 
 int items_number = 20;

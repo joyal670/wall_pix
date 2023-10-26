@@ -1,11 +1,10 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, sort_child_properties_last, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:wallpix/core/colors.dart';
-import 'package:wallpix/core/dim.dart';
-import 'package:wallpix/model/category_model.dart';
 
 import '../../api/api.dart';
+import '../../core/dim.dart';
+import '../../model/category_model.dart';
 import '../CustomappBar.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 

@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:wallpix/dashboard/category/category.dart';
-import 'package:wallpix/dashboard/random/random.dart';
-import 'package:wallpix/dashboard/wallet/wallet.dart';
+import 'package:wallpixel/dashboard/category/category.dart';
+import 'package:wallpixel/dashboard/random/random.dart';
+import 'package:wallpixel/dashboard/wallet/wallet.dart';
 
 import '../core/colors.dart';
 import '../core/dim.dart';

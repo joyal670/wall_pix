@@ -10,15 +10,13 @@ import 'package:path_provider/path_provider.dart';
 import 'package:percentify/components/RectCircularPercentify.dart';
 import 'package:percentify/components/RectLinearPercentify.dart';
 import 'package:percentify/components/RoundedCircularPercentify.dart';
-import 'package:wallpix/core/colors.dart';
-import 'package:wallpix/core/dim.dart';
-import 'package:wallpix/model/photo_model.dart';
+
 import 'package:loading_indicator/loading_indicator.dart';
 import '../../api/api.dart';
 import 'package:path/path.dart';
-import 'package:downloads_path_provider_28/downloads_path_provider_28.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:page_transition/page_transition.dart';
+import '../../core/dim.dart';
 import '../../model/category_model.dart';
 import '../../model/collection_details_response.dart';
 import '../home/tabs/latest.dart';

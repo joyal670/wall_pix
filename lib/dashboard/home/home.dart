@@ -2,15 +2,15 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wallpix/core/dim.dart';
-import 'package:wallpix/dashboard/CustomappBar.dart';
-import 'package:wallpix/dashboard/category/category.dart';
-import 'package:wallpix/dashboard/home/tabItems.dart';
-import 'package:wallpix/dashboard/home/tabs/latest.dart';
-import 'package:wallpix/dashboard/home/tabs/oldest.dart';
-import 'package:wallpix/dashboard/home/tabs/popular.dart';
-import 'package:wallpix/dashboard/home/tabs/recent.dart';
-import 'package:wallpix/dashboard/wallet/wallet.dart';
+import 'package:wallpixel/core/dim.dart';
+import 'package:wallpixel/dashboard/CustomappBar.dart';
+import 'package:wallpixel/dashboard/category/category.dart';
+import 'package:wallpixel/dashboard/home/tabItems.dart';
+import 'package:wallpixel/dashboard/home/tabs/latest.dart';
+import 'package:wallpixel/dashboard/home/tabs/oldest.dart';
+import 'package:wallpixel/dashboard/home/tabs/popular.dart';
+import 'package:wallpixel/dashboard/home/tabs/recent.dart';
+import 'package:wallpixel/dashboard/wallet/wallet.dart';
 
 import '../../api/api.dart';
 import '../../core/colors.dart';

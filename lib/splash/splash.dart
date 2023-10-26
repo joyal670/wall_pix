@@ -1,12 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:wallpix/welcome/welcome.dart';
 import 'package:page_transition/page_transition.dart';
 
 import '../core/size_config.dart';
 import '../login/login.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../welcome/welcome.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

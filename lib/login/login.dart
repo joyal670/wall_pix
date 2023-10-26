@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:wallpix/core/colors.dart';
-import 'package:wallpix/core/dim.dart';
+import 'package:wallpixel/core/colors.dart';
+import 'package:wallpixel/core/dim.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:wallpix/dashboard/dashboard.dart';
+import 'package:wallpixel/dashboard/dashboard.dart';
 
 import '../core/size_config.dart';
 
